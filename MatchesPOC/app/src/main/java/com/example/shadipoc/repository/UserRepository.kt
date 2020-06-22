@@ -24,6 +24,9 @@ class UserRepository @Inject constructor(application: Application) {
 
     @Inject
     lateinit var application: Application
+    
+    @Inject
+    lateinit var userApi: UserApi
 
     private class ListInsertAsyncTask internal constructor(private val asyncTaskDao: UserDao) :
         AsyncTask<List<UserData>, Void, Void>() {
@@ -74,7 +77,7 @@ class UserRepository @Inject constructor(application: Application) {
     @SuppressLint("CheckResult")
     fun fetchOnlineData(): MutableLiveData<List<UserData>> {
 
-        employeeApi.getUserList()
+        userApi.getUserList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
