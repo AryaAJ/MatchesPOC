@@ -25,9 +25,6 @@ class UserRepository @Inject constructor(application: Application) {
     @Inject
     lateinit var application: Application
 
-    @Inject
-    lateinit var employeeApi: UserApi
-
     private class ListInsertAsyncTask internal constructor(private val asyncTaskDao: UserDao) :
         AsyncTask<List<UserData>, Void, Void>() {
 
