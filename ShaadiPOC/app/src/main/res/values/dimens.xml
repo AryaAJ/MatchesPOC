@@ -1,0 +1,21 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="fiftyfive_dp">55dp</dimen>
+    <dimen name="fifty_dp">50dp</dimen>
+    <dimen name="thirty_dp">30dp</dimen>
+    <dimen name="twentyseven_dp">27dp</dimen>
+    <dimen name="twentyfive_dp">25dp</dimen>
+    <dimen name="twenty_dp">20dp</dimen>
+    <dimen name="ten_dp">10dp</dimen>
+    <dimen name="seven_dp">7dp</dimen>
+    <dimen name="five_dp">5dp</dimen>
+
+    <dimen name="twenty_sp">20sp</dimen>
+    <dimen name="eighteen_sp">18sp</dimen>
+    <dimen name="sixteen_sp">16sp</dimen>
+    <dimen name="ten_sp">10sp</dimen>
+    <dimen name="five_sp">5sp</dimen>
+    <dimen name="fifteen_dp">15dp</dimen>
+
+</resources>

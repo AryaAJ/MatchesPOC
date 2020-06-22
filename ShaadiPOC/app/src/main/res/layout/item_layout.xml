@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="data"
+                type="com.example.shadipoc.data.room.UserData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/five_dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/ten_dp"
+                android:layout_marginRight="@dimen/ten_dp"
+                android:layout_marginBottom="@dimen/ten_dp"
+                android:background="@drawable/background_card"
+                android:elevation="7dp"
+                android:padding="@dimen/five_dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                        android:id="@+id/profile_rel"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/seven_dp"
+                            android:background="@drawable/background_card_image"
+                            android:elevation="@dimen/five_dp"
+                            android:src="@drawable/placholder" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:id="@+id/relativeLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/profile_rel"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                            android:id="@+id/name"
+                            style="@style/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="22dp"
+                            android:fontFamily="@font/museosans_500"
+                            android:text="@{data.fname +` `+ data.lname}"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            tools:text="Ajay Arya" />
+
+                    <TextView
+                            android:id="@+id/gender"
+                            style="@style/description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/name"
+                            android:layout_marginStart="20dp"
+                            android:text="@{`Gender: `+data.gender}"
+                            tools:text="Ajay Arya" />
+
+                    <TextView
+                            android:id="@+id/age"
+                            style="@style/description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/gender"
+                            android:layout_marginStart="20dp"
+                            android:text="@{`Age: `+data.age}"
+                            tools:text="Ajay Arya" />
+
+                    <TextView
+                            android:id="@+id/address"
+                            style="@style/description_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/age"
+                            android:layout_marginStart="20dp"
+                            android:text="@{`Address: `+data.address}"
+                            tools:text="Ajay Arya" />
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/five_dp"
+                    android:paddingBottom="@dimen/five_dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/main">
+
+                <View
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/fifteen_dp"
+                        android:layout_marginEnd="@dimen/fifteen_dp"
+                        android:background="@color/lightgrey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/like"
+                        android:layout_width="@dimen/thirty_dp"
+                        android:layout_height="@dimen/twentyseven_dp"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:layout_marginEnd="10dp"
+                        android:elevation="3dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/accept"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/dislike"
+                        android:layout_width="@dimen/thirty_dp"
+                        android:layout_height="@dimen/twentyseven_dp"
+                        android:layout_marginEnd="@dimen/ten_dp"
+                        android:elevation="3dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/reject"
+                        app:layout_constraintBottom_toBottomOf="@+id/like"
+                        app:layout_constraintEnd_toStartOf="@+id/like"
+                        app:layout_constraintTop_toTopOf="@+id/like" />
+
+                <RelativeLayout
+                        android:id="@+id/reacted"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/thirty_dp"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/line">
+
+                    <TextView
+                            android:id="@+id/reaction_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/museosans_500"
+                            android:gravity="center"
+                            android:text="@string/accept"
+                            android:textSize="@dimen/sixteen_sp"
+                            android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/reaction_image"
+                            android:layout_width="@dimen/thirty_dp"
+                            android:layout_height="@dimen/thirty_dp"
+                            android:layout_centerInParent="true"
+                            android:layout_toRightOf="@+id/reaction_text"
+                            android:paddingLeft="10dp"
+                            android:src="@drawable/ic_heart" />
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

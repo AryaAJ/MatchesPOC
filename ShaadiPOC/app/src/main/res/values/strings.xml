@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Users</string>
+    <string name="title_activity_third">ThirdActivity</string>
+
+    <string name="accept">You have accepted the request</string>
+    <string name="reject">You have rejected the request</string>
+</resources>
